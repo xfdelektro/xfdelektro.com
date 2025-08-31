@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>XFDElektro – Velkoobchod s elektromateriálem</title>
-  <meta name="description" content="XFDElektro – elektrovelkoobchod: sklad na přání, zakázkové materiály, komponenty pro domácnosti, průmysl i čistou energii." />
+  <meta name="description" content="Elektrovelkoobchod: dodávky D+1, sklad na přání, zakázkové materiály. Sortiment pro průmysl, montážní firmy a domácnosti včetně FVE komponent." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -25,37 +25,50 @@
     a{color:var(--brand-3);text-decoration:none;}
     a:hover{text-decoration:underline;}
     .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+    /* Header */
     header.site{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #ddd;z-index:30;}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
     .brand{font-weight:700;display:flex;align-items:center;gap:10px;}
     .brand span{display:inline-block;width:20px;height:20px;border-radius:50%;background:linear-gradient(90deg,var(--brand),var(--brand-2),var(--brand-3));}
     .menu{display:flex;gap:18px;font-size:15px;}
-    .hero{text-align:center;padding:80px 0 60px;}
+
+    /* Hero */
+    .hero{position:relative;text-align:center;padding:80px 0 60px;overflow:hidden;}
+    .hero::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:linear-gradient(90deg,var(--brand),var(--brand-2),var(--brand-3));}
     h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:0 0 18px;}
-    .sub{color:var(--muted);font-size:18px;max-width:720px;margin:0 auto 28px;}
+    .sub{color:var(--muted);font-size:18px;max-width:780px;margin:0 auto 28px;}
     .cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
     .btn{padding:12px 20px;border-radius:var(--radius);font-weight:600;box-shadow:var(--shadow);}
     .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2),var(--brand-3));color:#fff;border:none;}
     .btn.outline{border:1px solid #ccc;background:#fff;color:var(--text);}
+
+    /* Sections */
     section{padding:64px 0;}
     h2{font-size:clamp(24px,3vw,34px);margin:0 0 18px;}
     p.lead{color:var(--muted);}
     .grid{display:grid;gap:20px;grid-template-columns:repeat(12,1fr);}
-    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);}
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transition:transform .2s ease, box-shadow .2s ease;}
+    .card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.12);}
     .services .item{grid-column:span 12;}
     @media(min-width:700px){.services .item{grid-column:span 6;}}
     @media(min-width:1000px){.services .item{grid-column:span 4;}}
+
+    /* Forms */
     form{display:grid;gap:12px;max-width:860px;}
-    input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #d1d5db;background:#fff;color:var(--text);} 
+    input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #d1d5db;background:#fff;color:var(--text);}
     textarea{min-height:140px;}
     label.small{color:var(--muted);font-size:13px;}
+    .note{font-size:13px;color:var(--muted);}
+
+    /* Footer */
     footer{background:#f3f4f6;border-top:1px solid #ddd;color:var(--muted);}
     .footRow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:22px 0;}
     .small{font-size:13px;}
-    .note{font-size:13px;color:var(--muted);} 
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site">
     <nav class="container nav">
       <div class="brand"><span></span>XFDElektro</div>
@@ -69,10 +82,11 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <h1>Velkoobchod s elektromateriálem pro průmysl, montážní firmy a domácnosti.</h1>
-      <p class="sub">Dodávky D+1, sklad na přání, zakázkové materiály. Prodáváme pro domácnosti, průmysl i FVE.</p>
+      <p class="sub">Dodávky D+1, sklad na přání a zakázkové materiály. Sortiment od jištění po FVE komponenty – rychle, spolehlivě, B2B podmínky.</p>
       <div class="cta">
         <a class="btn primary" href="#registrace">Získat B2B ceník</a>
         <a class="btn outline" href="#poptavka">Zadat poptávku</a>
@@ -80,33 +94,47 @@
     </div>
   </section>
 
+  <!-- SLUŽBY -->
   <section id="sluzby" class="services">
     <div class="container">
       <h2>Co umíme</h2>
       <p class="lead">Nejsme limitovaní dodavateli – zajistíme vám přesně to, co potřebujete.</p>
       <div class="grid">
-        <div class="item card"><h3>Sklad na přání</h3><p>Držíme skladem položky, které pravidelně odebíráte – jistota dostupnosti a rychlého výdeje.</p></div>
-        <div class="item card"><h3>Zakázkové materiály</h3><p>Vyřizujeme poptávky na speciální a méně běžný materiál, včetně dovozu na objednávku.</p></div>
-        <div class="item card"><h3>Velkoobchodní služby</h3><p>B2B ceníky, individuální slevy, exporty nabídek. Dodávky pro domácnosti, průmysl i FVE projekty.</p></div>
+        <div class="item card">
+          <h3>Sklad na přání</h3>
+          <p>Držíme skladem položky, které pravidelně odebíráte – jistota dostupnosti a rychlého výdeje.</p>
+        </div>
+        <div class="item card">
+          <h3>Zakázkové materiály</h3>
+          <p>Vyřizujeme poptávky na speciální a méně běžný materiál, včetně dovozu na objednávku.</p>
+        </div>
+        <div class="item card">
+          <h3>Velkoobchodní služby</h3>
+          <p>B2B ceníky, individuální slevy, exporty nabídek. Dodávky pro průmysl, montážní firmy a domácnosti, včetně FVE projektů.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- SORTIMENT -->
   <section id="sortiment">
     <div class="container">
       <h2>Sortiment</h2>
       <p class="lead">Od klasiky po moderní čistou energii.</p>
       <div class="grid services">
         <div class="item card"><h3>Jističe a chrániče</h3><p>1P–4P, proudové chrániče, kombinované přístroje.</p></div>
-        <div class="item card"><h3>Rozvaděče</h3><p>Skříně zapuštěné, nástěnné, DIN lišty, svorky.</p></div>
-        <div class="item card"><h3>Kabely</h3><p>CYKY/AYKY, CYA, datové a slaboproudé.</p></div>
-        <div class="item card"><h3>Přepěťové ochrany</h3><p>T1–T3, domy i průmysl, HAKEL/OEZ/Eaton.</p></div>
-        <div class="item card"><h3>FVE komponenty</h3><p>GoodWe, Tigo, DC odpojovače, DC jističe.</p></div>
-        <div class="item card"><h3>Osvětlení</h3><p>LED svítidla, pásky, zdroje, nouzová světla.</p></div>
+        <div class="item card"><h3>Rozvaděče a příslušenství</h3><p>Skříně zapuštěné i nástěnné, DIN lišty, svorky, štítky.</p></div>
+        <div class="item card"><h3>Kabely a vodiče</h3><p>CYKY/AYKY, CYA, datové, slaboproudé a speciální.</p></div>
+        <div class="item card"><h3>Přepěťové ochrany</h3><p>T1–T3 pro domy i průmysl, HAKEL/OEZ/Eaton.</p></div>
+        <div class="item card"><h3>FVE komponenty</h3><p>GoodWe, Tigo, DC odpojovače, DC jističe a kabeláž.</p></div>
+        <div class="item card"><h3>Osvětlení a zdroje</h3><p>LED svítidla, pásky, napájecí zdroje, nouzová světla.</p></div>
+        <div class="item card"><h3>Svorky a přípojnice</h3><p>WAGO, přípojnice PEN/PE, svorkovnice a propojky.</p></div>
+        <div class="item card"><h3>Nářadí a měření</h3><p>Kleště, lisy, měřáky, testery a příslušenství.</p></div>
       </div>
     </div>
   </section>
 
+  <!-- PODMÍNKY -->
   <section id="podminky">
     <div class="container">
       <h2>Velkoobchodní podmínky</h2>
@@ -114,17 +142,18 @@
         <li><strong>Registrace IČ</strong> – po schválení přístup k B2B ceníkům.</li>
         <li><strong>Sklad na přání</strong> – držíme pravidelně odebírané položky.</li>
         <li><strong>Zakázkové poptávky</strong> – seženeme i speciální materiály.</li>
-        <li><strong>Doprava</strong> – osobní odběr, balík, paleta, D+1.</li>
-        <li><strong>Platba</strong> – převodem, dobírkou, po ověření i splatnost.</li>
+        <li><strong>Logistika</strong> – osobní odběr, balík i paleta; skladové položky obvykle D+1.</li>
+        <li><strong>Platba</strong> – převodem, dobírkou; po ověření možnost splatnosti.</li>
+        <li><strong>Podpora</strong> – technické konzultace a návrhy rozvaděčů.</li>
       </ul>
     </div>
   </section>
 
+  <!-- REGISTRACE B2B -->
   <section id="registrace">
     <div class="container">
       <h2>Registrace B2B</h2>
       <p class="lead">Vyplňte údaje a po schválení vám pošleme ceníky a podmínky.</p>
-      <!-- Formspree: nahraďte XXXXXXXX svým ID formuláře -->
       <form id="form-registrace" action="https://formspree.io/f/XXXXXXXX" method="POST">
         <input type="hidden" name="_subject" value="Nová B2B registrace – XFDElektro">
         <input type="text" name="company" placeholder="Firma" required>
@@ -132,8 +161,9 @@
         <input type="text" name="dic" placeholder="DIČ (volitelné)">
         <input type="text" name="person" placeholder="Kontaktní osoba" required>
         <input type="tel" name="phone" placeholder="Telefon" required>
-        <input type="email" name="email" placeholder="E‑mail" required>
+        <input type="email" name="email" placeholder="E-mail" required>
         <textarea name="note" placeholder="Poznámka (sortiment, objemy…)"></textarea>
+        <input type="text" name="_gotcha" style="display:none">
         <label class="small" style="display:flex;align-items:center;gap:8px;">
           <input type="checkbox" name="gdpr" required>
           Souhlasím se zpracováním údajů pro vyřízení registrace
@@ -141,21 +171,22 @@
         <button class="btn primary" type="submit">Odeslat žádost</button>
         <div id="status-registrace" class="note" aria-live="polite"></div>
       </form>
-      <p class="note">Nemáte čas? Pošlete e‑mail na <a href="mailto:info@xfdelektro.com">info@xfdelektro.com</a>.</p>
+      <p class="note">Nemáte čas? Pošlete e-mail na <a href="mailto:info@xfdelektro.com">info@xfdelektro.com</a>.</p>
     </div>
   </section>
 
+  <!-- POPTÁVKA -->
   <section id="poptavka">
     <div class="container">
       <h2>Poptávkový formulář</h2>
       <p class="lead">Zadejte konkrétní položky nebo popis zakázky a my vám připravíme nabídku.</p>
-      <!-- Formspree: nahraďte YYYYYYYY svým ID formuláře -->
       <form id="form-poptavka" action="https://formspree.io/f/YYYYYYYY" method="POST">
         <input type="hidden" name="_subject" value="Nová poptávka – XFDElektro">
         <input type="text" name="name" placeholder="Firma / Jméno" required>
-        <input type="email" name="email" placeholder="E‑mail" required>
+        <input type="email" name="email" placeholder="E-mail" required>
         <input type="tel" name="phone" placeholder="Telefon" required>
         <textarea name="items" placeholder="Seznam položek, kódy, množství nebo popis zakázky" required></textarea>
+        <input type="text" name="_gotcha" style="display:none">
         <label class="small" style="display:flex;align-items:center;gap:8px;">
           <input type="checkbox" name="gdpr" required>
           Souhlasím se zpracováním údajů pro vyřízení poptávky
@@ -166,39 +197,18 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container footRow">
       <div>© 2025 XFDElektro</div>
-      <div class="small">IČO 12345678 • B2B velkoobchod • <a href="mailto:info@xfdelektro.com">info@xfdelektro.com</a></div>
+      <div class="small">IČO 12345678 • B2B velkoobchod • <a href="mailto:info@xfdelektro.com">info@xfdelektro.com</a></div>
     </div>
     <div class="container" style="padding-bottom:20px;">
-<p><strong>Kontakt na obchod:</strong><br>
-Dominik Brož – obchod a technická podpora<br>
-📞 <a href="tel:+420123456789">+420 123 456 789</a><br>
-📧 <a href="mailto:domin@xfdelektro.com">domin@xfdelektro.com</a></p>
-</div>
-</footer>
+      <p><strong>Kontakt na obchod:</strong><br>
+      Dominik Brož – obchod a technická podpora<br>
+      📞 <a href="tel:+420123456789">+420 123 456 789</a><br>
+      📧 <a href="mailto:domin@xfdelektro.com">domin@xfdelektro.com</a></p>
+    </div>
   </footer>
-
-<script>
-  // Odesílání přes Formspree s potvrzením bez reloadu
-  function attachFormHandler(formId, statusId){
-    const form = document.getElementById(formId);
-    const status = document.getElementById(statusId);
-    if(!form) return;
-    form.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      status.textContent = 'Odesílám…';
-      try{
-        const data = new FormData(form);
-        const res = await fetch(form.action, { method:'POST', body:data, headers:{'Accept':'application/json'} });
-        if(res.ok){ status.textContent = 'Děkujeme! Zpráva byla odeslána.'; form.reset(); }
-        else { status.textContent = 'Nepodařilo se odeslat. Zkuste to prosím znovu.'; }
-      }catch(err){ status.textContent = 'Chyba připojení. Zkuste to prosím znovu.'; }
-    });
-  }
-  attachFormHandler('form-registrace','status-registrace');
-  attachFormHandler('form-poptavka','status-poptavka');
-</script>
 </body>
 </html>
